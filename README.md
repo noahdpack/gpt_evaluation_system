@@ -180,33 +180,33 @@ The following are screenshots displaying the dashbaord and its features.
 ### Dashboard Initial Launch
 This is what the dashboard looks like right after running main:
 
-![Dashboard Initial Launch][screenshots/dashboard.png]
+![Dashboard Initial Launch](screenshots/dashboard.png)
 
 ### Enter Assistant Name
 First enter the name of the assistant you want to test. Use test to run the pre-made assistant:
 
-![Enter Assistant Name][screenshots/enter_assistant_name.png]
+![Enter Assistant Name](screenshots/enter_assistant_name.png)
 
 ### Start the Tests
 To start the tests click the Run evaluation button. The dashboard should look like this after the button was clicked:
 
-![Clicked the Button][screenshots/start_gpt_eval.png]
+![Clicked the Button](screenshots/start_gpt_eval.png)
 
 ### Finished Evaluation
 The entire evaluation with the standard assistant and test cases can take up to 15 minutes. This is what the dashboard should look like after a successful evaluation:
 
-![Evaluation Done][screenshots/finished_eval.png]
+![Evaluation Done](screenshots/finished_eval.png)
 
 ### Scoring Info
 You can click on each test case to get a dropdown with information on how the assistant performed on each scoring dimension and hard gate:
 
-![Scoring Dimension Info][screenshots/test_case_scoring_info.png]
+![Scoring Dimension Info](screenshots/test_case_scoring_info.png)
 
-![Hard Gate Info][screenshots/hard_gate_info.png]
+![Hard Gate Info](screenshots/hard_gate_info.png)
 
 ### Failed Testcase
 Here is what a failed test case looks like based on scoring and then on a hard gate:
 
-![Failed on Score][screenshots/failed_on_score.png]
+![Failed on Score](screenshots/failed_on_score.png)
 
-![Failed on Hard Gate][screenshots/failed_on_hardgate.png]
+![Failed on Hard Gate](screenshots/failed_on_hardgate.png)
