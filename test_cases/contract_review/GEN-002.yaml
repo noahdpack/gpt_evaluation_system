@@ -1,0 +1,74 @@
+id: "GEN-002"
+name: "Missing Effective Date"
+category: "Issue spotting / Contract metadata extraction"
+contract_type: "MSA"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Issue spotting"
+input_type: "Short excerpt"
+
+input_text: |
+  This Master Services Agreement is entered into by and between Customer and Provider.
+
+  Provider shall begin performing the Services upon execution of this Agreement. The Initial Term shall continue for one year from the Effective Date.
+
+expected:
+  finding: >
+    The agreement references an “Effective Date” but does not define or provide one.
+
+  explanation: >
+    A missing effective date can create uncertainty about when the term begins,
+    when obligations start, and when renewal or termination deadlines occur.
+
+  severity: "Medium"
+
+  recommendation: >
+    Add a defined effective date, such as the date of last signature or a specific calendar date.
+
+assertions:
+  required_phrases:
+    - "Effective Date"
+    - "one year from the Effective Date"
+
+  required_concepts:
+    - "Effective Date is undefined or missing"
+    - "Uncertainty about when the term begins"
+    - "Need to define the effective date"
+
+  prohibited_phrases:
+    - "the effective date is the signing date"
+    - "no issue"
+
+  prohibited_concepts:
+    - fail if response states or implies the contract already defines Effective Date as the signing date
+    - fail if response treats execution date and Effective Date as legally equivalent without support
+    - do not fail merely because response suggests defining Effective Date as the last signature date as a possible drafting fix
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not assume the signing date unless the contract says so"
+  - "Do not overlook the impact on renewal or expiration"
+
+fail_conditions:
+  - "Fails to flag the missing definition"
+  - "Invents an effective date"
+  - "Gives only generic contract advice"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

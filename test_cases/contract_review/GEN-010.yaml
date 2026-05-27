@@ -1,0 +1,75 @@
+id: "GEN-010"
+name: "Unclear Fees"
+category: "Commercial Terms"
+contract_type: "SOW"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Issue spotting / Clause extraction"
+input_type: "Short excerpt"
+
+input_text: |
+  Customer shall pay Vendor the applicable fees for the Services. Vendor will invoice Customer periodically. Customer shall reimburse Vendor for reasonable expenses.
+
+expected:
+  finding: >
+    The payment terms are vague because the amount, invoicing frequency, payment
+    deadline, and expense approval process are unclear.
+
+  explanation: >
+    Unclear payment terms can lead to disputes over amounts owed, timing,
+    reimbursable expenses, and billing expectations.
+
+  severity: "High"
+
+  recommendation: >
+    Specify fees, billing schedule, payment deadline, reimbursable expense categories,
+    and whether expenses require prior written approval.
+
+assertions:
+  required_phrases:
+    - "applicable fees"
+    - "periodically"
+    - "reasonable expenses"
+
+  required_concepts:
+    - "Fees are unclear"
+    - "Invoicing frequency is vague"
+    - "Expense reimbursement process is unclear"
+    - "Need to specify payment terms"
+
+  prohibited_phrases:
+    - "Net 30"
+    - "payment terms are clear"
+
+  prohibited_concepts:
+    - "Inventing payment terms not stated in the excerpt"
+    - "Ignoring reimbursable expenses"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not assume a market payment term like Net 30"
+  - "Do not ignore expenses"
+
+fail_conditions:
+  - "Says payment terms are clear"
+  - "Flags only one missing detail"
+  - "Does not recommend concrete additions"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

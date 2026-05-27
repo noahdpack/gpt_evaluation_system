@@ -1,0 +1,83 @@
+id: "GEN-030"
+name: "Key Risks Not Carved Out From Liability Cap"
+category: "Liability / Clause Interaction"
+contract_type: "MSA"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Clause interaction / Risk assessment"
+input_type: "Multi-clause excerpt"
+
+input_text: |
+  Vendor shall indemnify Customer against third-party claims alleging that the Services infringe intellectual property rights.
+
+  Vendor shall protect Customer Confidential Information using reasonable care.
+
+  Each party’s total aggregate liability under this Agreement shall not exceed the amounts paid under this Agreement in the six (6) months preceding the claim. This limitation applies to all claims, whether in contract, tort, statute, or otherwise.
+
+expected:
+  finding: >
+    The liability cap appears to apply to all claims, including Vendor’s IP indemnity
+    and confidentiality obligations.
+
+  explanation: >
+    Capping IP indemnity and confidentiality claims may leave the customer with
+    insufficient recovery for high-impact risks that are often excluded from the
+    general liability cap or subject to a higher cap.
+
+  severity: "High"
+
+  recommendation: >
+    Carve out or apply a higher super-cap to IP indemnity, confidentiality breaches,
+    data/security breaches, and other key obligations as appropriate.
+
+assertions:
+  required_phrases:
+    - "indemnify Customer"
+    - "Customer Confidential Information"
+    - "total aggregate liability"
+    - "This limitation applies to all claims"
+
+  required_concepts:
+    - "Clause interaction between indemnity, confidentiality, and liability cap"
+    - "IP indemnity appears capped"
+    - "Confidentiality obligations appear capped"
+    - "Need carveouts or a higher super-cap"
+
+  prohibited_phrases:
+    - "indemnity is uncapped"
+    - "confidentiality is uncapped"
+
+  prohibited_concepts:
+    - "Reviewing the liability clause in isolation"
+    - "Assuming indemnity or confidentiality claims are excluded from the cap"
+    - "Ignoring the “all claims” language"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not review the liability clause in isolation only"
+  - "Do not assume indemnity is uncapped"
+  - "Do not ignore “all claims” language"
+
+fail_conditions:
+  - "Misses clause interaction"
+  - "Says IP indemnity is uncapped"
+  - "Provides no carveout/super-cap recommendation"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

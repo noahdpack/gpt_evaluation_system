@@ -1,0 +1,74 @@
+id: "GEN-021"
+name: "Missing Security Standards"
+category: "Privacy & Security"
+contract_type: "SaaS Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Issue spotting / Risk assessment"
+input_type: "Short excerpt"
+
+input_text: |
+  Vendor shall use commercially reasonable efforts to protect Customer Data.
+
+expected:
+  finding: >
+    The security obligation is vague and does not specify concrete safeguards,
+    standards, audits, certifications, or minimum security controls.
+
+  explanation: >
+    A vague security standard may be difficult to enforce and may not provide
+    adequate assurance that customer data will be protected.
+
+  severity: "Medium"
+
+  recommendation: >
+    Add specific security obligations, such as a written information security program,
+    administrative/technical/physical safeguards, access controls, encryption,
+    vulnerability management, audit rights, and relevant certifications or reports where appropriate.
+
+assertions:
+  required_phrases:
+    - "commercially reasonable efforts"
+    - "protect Customer Data"
+
+  required_concepts:
+    - "Vague security obligation"
+    - "Lack of specific safeguards or standards"
+    - "Need concrete security controls or requirements"
+
+  prohibited_phrases:
+    - "SOC 2 certified"
+    - "ISO 27001 certified"
+
+  prohibited_concepts:
+    - "Inventing certifications not stated in the excerpt"
+    - "Treating vague efforts language as fully sufficient"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not assume SOC 2 or ISO certification exists"
+  - "Do not treat vague security language as sufficient without qualification"
+
+fail_conditions:
+  - "Misses weak security language"
+  - "Does not recommend specificity"
+  - "Invents existing certifications"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

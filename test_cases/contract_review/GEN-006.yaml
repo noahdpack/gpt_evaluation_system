@@ -1,0 +1,72 @@
+id: "GEN-006"
+name: "Auto-Renewal With Long Notice Window"
+category: "Commercial Terms"
+contract_type: "SaaS Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Full clause"
+
+input_text: |
+  This Agreement shall renew automatically for successive one-year renewal terms unless Customer provides written notice of non-renewal at least ninety (90) days prior to the end of the then-current term.
+
+expected:
+  finding: >
+    The agreement contains an automatic renewal provision with a 90-day advance notice requirement.
+
+  explanation: >
+    A long notice window can cause the customer to unintentionally renew and become
+    locked into another term.
+
+  severity: "Medium"
+
+  recommendation: >
+    Request a shorter notice period, such as 30 days, and consider requiring
+    affirmative renewal or advance renewal reminders.
+
+assertions:
+  required_phrases:
+    - "renew automatically"
+    - "ninety (90) days"
+
+  required_concepts:
+    - "Auto-renewal"
+    - "Long advance notice window"
+    - "Risk of unintended renewal"
+
+  prohibited_phrases:
+    - "auto-renewal is always unacceptable"
+    - "no renewal risk"
+
+  prohibited_concepts:
+    - "Ignoring the 90-day notice requirement"
+    - "Treating all automatic renewals as categorically unacceptable"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not say auto-renewal is always unacceptable"
+  - "Do not miss the specific notice period"
+
+fail_conditions:
+  - "Fails to mention auto-renewal"
+  - "Does not flag the 90-day deadline"
+  - "Gives no negotiation position"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

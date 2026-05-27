@@ -1,0 +1,83 @@
+id: "GEN-001"
+name: "Inconsistent Party Names"
+category: "Metadata / Drafting Hygiene"
+contract_type: "NDA"
+reviewer_perspective: "Neutral"
+primary_skill_tested: "Drafting consistency / Issue spotting"
+input_type: "Short excerpt"
+
+input_text: |
+  This Mutual Non-Disclosure Agreement is entered into by and between Acme Technologies, Inc. and Beta Systems LLC.
+
+  Notice Address:
+  Acme Technology LLC
+  100 Market Street
+  San Francisco, CA 94105
+
+  Signature Block:
+  Acme Technologies, LLC
+  By: ___________________
+
+expected:
+  finding: >
+    The agreement uses inconsistent legal names for Acme: “Acme Technologies, Inc.,”
+    “Acme Technology LLC,” and “Acme Technologies, LLC.”
+
+  explanation: >
+    Inconsistent party names can create ambiguity about which legal entity is bound
+    and may create notice, enforcement, or signature authority issues.
+
+  severity: "Medium"
+
+  recommendation: >
+    Confirm the correct legal entity name and use it consistently in the preamble,
+    notice section, and signature block.
+
+assertions:
+  required_phrases:
+    - "Acme Technologies, Inc."
+    - "Acme Technology LLC"
+    - "Acme Technologies, LLC"
+
+  required_concepts:
+    - "Inconsistent legal entity names"
+    - "Potential ambiguity about which entity is bound"
+    - "Need to confirm and use the correct legal name consistently"
+
+  prohibited_phrases:
+    - "automatically unenforceable"
+    - "invalid contract"
+
+  prohibited_concepts:
+    - "The contract is necessarily unenforceable because of the inconsistency"
+    - "The inconsistency is merely cosmetic and requires no action"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not say the agreement is unenforceable without qualification"
+  - "Do not ignore the notice section inconsistency"
+
+fail_conditions:
+  - "Misses one or more inconsistent names"
+  - "Treats the issue as purely cosmetic"
+  - "Recommends no action"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

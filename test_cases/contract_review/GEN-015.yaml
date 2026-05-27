@@ -1,0 +1,74 @@
+id: "GEN-015"
+name: "Missing Compelled Disclosure Exception"
+category: "Confidentiality"
+contract_type: "NDA"
+reviewer_perspective: "Receiving Party"
+primary_skill_tested: "Issue spotting / Risk assessment"
+input_type: "Full clause"
+
+input_text: |
+  Recipient shall not disclose Confidential Information to any third party for any reason without Discloser’s prior written consent.
+
+expected:
+  finding: >
+    The clause does not include an exception for disclosures required by law, court
+    order, subpoena, or regulator.
+
+  explanation: >
+    The recipient may need to disclose information to comply with legal obligations,
+    and the contract should allow compelled disclosure with appropriate notice and
+    cooperation requirements.
+
+  severity: "Medium"
+
+  recommendation: >
+    Add a compelled disclosure exception allowing legally required disclosure,
+    preferably with advance notice to the discloser where legally permitted.
+
+assertions:
+  required_phrases:
+    - "for any reason"
+    - "without Discloser’s prior written consent"
+
+  required_concepts:
+    - "Missing compelled disclosure exception"
+    - "Recipient may need to comply with law, subpoena, court order, or regulator"
+    - "Need notice to discloser where legally permitted"
+
+  prohibited_phrases:
+    - "recipient can never disclose"
+    - "unlimited disclosure rights"
+
+  prohibited_concepts:
+    - "Ignoring legal compulsion scenarios"
+    - "Suggesting disclosure without safeguards"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not suggest unlimited disclosure rights"
+  - "Do not ignore legal compulsion scenarios"
+
+fail_conditions:
+  - "Misses the missing exception"
+  - "Recommends disclosure without safeguards"
+  - "Treats the clause as acceptable without caveat"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

@@ -1,0 +1,76 @@
+id: "GEN-024"
+name: "Broad Feedback License"
+category: "Intellectual Property"
+contract_type: "SaaS Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Full clause"
+
+input_text: |
+  Customer grants Vendor a perpetual, irrevocable, worldwide, royalty-free license to use, disclose, reproduce, modify, commercialize, and otherwise exploit any feedback, suggestions, ideas, or recommendations provided by Customer or its users, without restriction or attribution.
+
+expected:
+  finding: >
+    The feedback license is very broad and allows Vendor to commercialize customer
+    or user feedback without restriction.
+
+  explanation: >
+    This may be acceptable for general product feedback, but it could be risky if
+    feedback includes confidential information, business processes, customer-specific
+    requirements, or proprietary ideas.
+
+  severity: "Medium"
+
+  recommendation: >
+    Limit feedback rights so they do not include Customer Confidential Information,
+    Customer Data, or customer-specific developments, and clarify that no rights are
+    granted to underlying customer IP.
+
+assertions:
+  required_phrases:
+    - "perpetual, irrevocable, worldwide, royalty-free"
+    - "commercialize"
+    - "without restriction or attribution"
+
+  required_concepts:
+    - "Broad feedback license"
+    - "Risk if feedback includes confidential or proprietary information"
+    - "Need carveouts for customer confidential information and customer IP"
+
+  prohibited_phrases:
+    - "all feedback clauses are unacceptable"
+    - "no issue"
+
+  prohibited_concepts:
+    - "Treating all feedback clauses as categorically unacceptable"
+    - "Ignoring confidential information or proprietary ideas"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not say all feedback clauses are unacceptable"
+  - "Do not ignore customer confidential information"
+
+fail_conditions:
+  - "Misses feedback issue"
+  - "Provides overly broad acceptance"
+  - "Does not suggest carveouts"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

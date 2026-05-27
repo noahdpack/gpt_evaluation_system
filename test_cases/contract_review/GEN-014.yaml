@@ -1,0 +1,74 @@
+id: "GEN-014"
+name: "Overbroad Confidentiality Definition"
+category: "Confidentiality"
+contract_type: "NDA"
+reviewer_perspective: "Receiving Party"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Full clause"
+
+input_text: |
+  Confidential Information means all information of any kind relating to Discloser, whether disclosed before or after the Effective Date, whether or not marked confidential, and whether or not known to Recipient before disclosure.
+
+expected:
+  finding: >
+    The definition of Confidential Information is overly broad and appears to include
+    information already known to the recipient.
+
+  explanation: >
+    An overbroad definition can create unfair or impractical obligations and may
+    capture information that should be excluded from confidentiality duties.
+
+  severity: "Medium"
+
+  recommendation: >
+    Add standard exclusions for information already known, publicly available,
+    independently developed, or rightfully received from a third party.
+
+assertions:
+  required_phrases:
+    - "all information of any kind"
+    - "whether or not marked confidential"
+    - "whether or not known to Recipient"
+
+  required_concepts:
+    - "Overbroad confidentiality definition"
+    - "Information already known to recipient should be excluded"
+    - "Need standard exclusions"
+
+  prohibited_phrases:
+    - "standard without issue"
+    - "recipient has no concern"
+
+  prohibited_concepts:
+    - "Reviewing only from the disclosing-party perspective"
+    - "Ignoring information already known to the recipient"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not evaluate only from disclosing-party perspective"
+  - "Do not ignore the “whether or not known” language"
+
+fail_conditions:
+  - "Says the definition is standard without qualification"
+  - "Misses missing exclusions"
+  - "Recommends no revision"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

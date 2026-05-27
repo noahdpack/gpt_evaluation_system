@@ -1,0 +1,73 @@
+id: "GEN-016"
+name: "Missing Return or Destruction Obligation"
+category: "Confidentiality"
+contract_type: "NDA"
+reviewer_perspective: "Disclosing Party"
+primary_skill_tested: "Issue spotting / Risk assessment"
+input_type: "Short excerpt"
+
+input_text: |
+  Recipient shall use Confidential Information only for the Purpose and shall protect such information using reasonable care.
+
+expected:
+  finding: >
+    The clause does not require the recipient to return or destroy confidential
+    information upon request or termination.
+
+  explanation: >
+    Without return or destruction language, the recipient may retain sensitive
+    information longer than necessary.
+
+  severity: "Medium"
+
+  recommendation: >
+    Add a requirement to return or destroy confidential information upon request or
+    termination, subject to reasonable archival/legal retention exceptions.
+
+assertions:
+  required_phrases:
+    - "use Confidential Information only for the Purpose"
+    - "reasonable care"
+
+  required_concepts:
+    - "Missing return or destruction obligation"
+    - "Recipient may retain confidential information after termination"
+    - "Need return/destruction language with reasonable retention exceptions"
+
+  prohibited_phrases:
+    - "no post-termination issue"
+    - "must destroy all copies without exception"
+
+  prohibited_concepts:
+    - "Requiring destruction of legally required archival copies without exception"
+    - "Ignoring post-termination handling of confidential information"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not require destruction of legally required archival copies without exception"
+  - "Do not overlook post-termination handling"
+
+fail_conditions:
+  - "Misses the missing obligation"
+  - "Gives no post-termination recommendation"
+  - "Ignores disclosing-party perspective"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

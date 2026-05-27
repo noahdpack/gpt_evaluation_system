@@ -1,0 +1,76 @@
+id: "GEN-025"
+name: "Open Source Risk Not Addressed"
+category: "Intellectual Property"
+contract_type: "Software Development Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Issue spotting / Risk assessment"
+input_type: "Short excerpt"
+
+input_text: |
+  Vendor will develop and deliver custom software for Customer. Vendor may use third-party code, libraries, frameworks, and tools as Vendor deems appropriate.
+
+expected:
+  finding: >
+    The clause permits use of third-party code but does not address open source
+    restrictions, disclosure, approval, or license compliance.
+
+  explanation: >
+    Some open source licenses may impose obligations that affect ownership,
+    distribution, disclosure of source code, or commercial use.
+
+  severity: "Medium"
+
+  recommendation: >
+    Require Vendor to comply with third-party license terms, disclose open source
+    components, avoid copyleft code without approval, and provide a software bill of
+    materials if appropriate.
+
+assertions:
+  required_phrases:
+    - "third-party code"
+    - "libraries"
+    - "frameworks"
+    - "as Vendor deems appropriate"
+
+  required_concepts:
+    - "Unrestricted third-party code use"
+    - "Open source license compliance risk"
+    - "Need disclosure, approval, and license compliance obligations"
+
+  prohibited_phrases:
+    - "open source is always prohibited"
+    - "copyleft code is used"
+
+  prohibited_concepts:
+    - "Assuming copyleft code is actually used"
+    - "Treating all open source as inherently unacceptable"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not say open source is always bad"
+  - "Do not assume copyleft code is actually used"
+
+fail_conditions:
+  - "Misses third-party/open-source risk"
+  - "Recommends blanket prohibition without nuance"
+  - "Provides no compliance mechanism"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

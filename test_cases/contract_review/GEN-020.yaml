@@ -1,0 +1,75 @@
+id: "GEN-020"
+name: "Unrestricted Subprocessors"
+category: "Privacy & Security"
+contract_type: "DPA / SaaS Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Full clause"
+
+input_text: |
+  Vendor may engage subprocessors and other third-party service providers in connection with the Services without notice to or consent from Customer.
+
+expected:
+  finding: >
+    Vendor can use subprocessors without customer notice, consent, or apparent
+    responsibility for their acts and omissions.
+
+  explanation: >
+    Unrestricted subprocessors can increase data protection and operational risk
+    because customer data may be handled by unknown third parties.
+
+  severity: "High"
+
+  recommendation: >
+    Require prior notice of new subprocessors, an opportunity to object, written
+    subprocessor obligations at least as protective as the agreement, and vendor
+    responsibility for subprocessors.
+
+assertions:
+  required_phrases:
+    - "without notice to or consent from Customer"
+    - "subprocessors"
+    - "third-party service providers"
+
+  required_concepts:
+    - "Unrestricted subprocessor use"
+    - "No customer notice or consent"
+    - "Need flow-down obligations and vendor responsibility"
+
+  prohibited_phrases:
+    - "Customer approval is required"
+    - "subprocessors are already restricted"
+
+  prohibited_concepts:
+    - "Assuming subprocessors are bound by equivalent obligations"
+    - "Ignoring customer oversight issue"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not assume subprocessors are bound by equivalent terms"
+  - "Do not ignore customer oversight issue"
+
+fail_conditions:
+  - "Misses unrestricted subprocessor rights"
+  - "Recommends no customer notice"
+  - "Gives only generic privacy commentary"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

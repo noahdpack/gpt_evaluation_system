@@ -1,0 +1,73 @@
+id: "GEN-019"
+name: "Weak Breach Notification"
+category: "Privacy & Security"
+contract_type: "SaaS Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Full clause"
+
+input_text: |
+  Vendor will notify Customer of any confirmed security incident affecting Customer Data within a reasonable time after Vendor determines that notice is appropriate.
+
+expected:
+  finding: >
+    The breach notification obligation is vague and gives Vendor discretion over
+    timing and whether notice is appropriate.
+
+  explanation: >
+    The customer may not receive timely notice needed to investigate, mitigate harm,
+    comply with legal obligations, or notify affected individuals or regulators.
+
+  severity: "High"
+
+  recommendation: >
+    Require notice within a specific period, such as 24, 48, or 72 hours after
+    discovery, and require reasonable cooperation and incident details.
+
+assertions:
+  required_phrases:
+    - "within a reasonable time"
+    - "determines that notice is appropriate"
+
+  required_concepts:
+    - "Vague breach notification timing"
+    - "Vendor discretion over whether notice is appropriate"
+    - "Need a specific notice deadline and cooperation obligations"
+
+  prohibited_phrases:
+    - "reasonable time is sufficient"
+    - "Vendor must notify immediately"
+
+  prohibited_concepts:
+    - "Ignoring vendor discretion"
+    - "Treating vague timing as always adequate"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not treat “reasonable time” as always sufficient"
+  - "Do not ignore “determines that notice is appropriate”"
+
+fail_conditions:
+  - "Misses vague timing"
+  - "Fails to identify vendor discretion"
+  - "Gives no revised notice standard"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

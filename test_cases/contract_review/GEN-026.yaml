@@ -1,0 +1,73 @@
+id: "GEN-026"
+name: "One-Way Indemnity"
+category: "Indemnity"
+contract_type: "MSA"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Clause interaction / Risk assessment"
+input_type: "Full clause"
+
+input_text: |
+  Customer shall indemnify, defend, and hold harmless Vendor from and against any and all claims, damages, losses, liabilities, costs, and expenses arising out of or relating to Customer’s use of the Services.
+
+expected:
+  finding: >
+    The indemnity is one-way in favor of Vendor and does not include a corresponding
+    Vendor indemnity for issues such as IP infringement, data breach, or Vendor misconduct.
+
+  explanation: >
+    The customer bears broad indemnity obligations while receiving no reciprocal
+    protection from vendor-caused third-party claims.
+
+  severity: "High"
+
+  recommendation: >
+    Narrow Customer’s indemnity to claims caused by Customer’s breach, misuse, or
+    unlawful conduct, and add appropriate Vendor indemnities.
+
+assertions:
+  required_phrases:
+    - "Customer shall indemnify"
+    - "arising out of or relating to Customer’s use of the Services"
+
+  required_concepts:
+    - "One-way indemnity"
+    - "Broad customer indemnity obligation"
+    - "Missing reciprocal vendor indemnity"
+
+  prohibited_phrases:
+    - "mutual indemnity"
+    - "balanced indemnity"
+
+  prohibited_concepts:
+    - "Saying mutuality exists when only Customer indemnifies"
+    - "Ignoring broad trigger language"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not say mutuality exists when only Customer indemnifies"
+  - "Do not ignore breadth of trigger language"
+
+fail_conditions:
+  - "Misses one-way nature"
+  - "Does not suggest vendor indemnities"
+  - "Treats broad customer indemnity as standard without comment"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

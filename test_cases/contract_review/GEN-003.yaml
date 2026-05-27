@@ -1,0 +1,72 @@
+id: "GEN-003"
+name: "Undefined Key Term"
+category: "Metadata / Drafting Hygiene"
+contract_type: "SaaS Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Drafting consistency / Issue spotting"
+input_type: "Short excerpt"
+
+input_text: |
+  Vendor shall maintain appropriate safeguards to protect Customer Data. Vendor may use Client Information to improve the Platform and develop new services.
+
+expected:
+  finding: >
+    The agreement uses both “Customer Data” and “Client Information,” but the excerpt
+    does not define either term or clarify whether they refer to the same data.
+
+  explanation: >
+    Undefined or inconsistent data terms can create ambiguity around privacy,
+    security, confidentiality, and permitted-use obligations.
+
+  severity: "Medium"
+
+  recommendation: >
+    Define each data-related term clearly or use one consistent term throughout the agreement.
+
+assertions:
+  required_phrases:
+    - "Customer Data"
+    - "Client Information"
+
+  required_concepts:
+    - "Data-related terms are undefined or inconsistent"
+    - "Ambiguity around whether the terms refer to the same information"
+    - "Need to define or harmonize the terms"
+
+  prohibited_phrases:
+    - "Customer Data and Client Information mean the same thing"
+    - "no ambiguity"
+
+  prohibited_concepts:
+    - "Assuming two different terms have the same meaning"
+    - "Ignoring the permitted-use implications"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not assume the two terms mean the same thing"
+  - "Do not ignore the permitted-use implication"
+
+fail_conditions:
+  - "Flags only one term"
+  - "Misses the data-use risk"
+  - "Provides no drafting fix"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

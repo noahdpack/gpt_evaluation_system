@@ -1,0 +1,22 @@
+{
+  "knowledge_base_name": "contract_analyzer_test_kb",
+  "purpose": "Test retrieval, citation grounding, vector store updates, and contract review quality.",
+  "recommended_upload_order": [
+    "policies/contract_review_policy_v2_current.md",
+    "policies/data_processing_guidelines.md",
+    "playbooks/liability_clause_playbook.md",
+    "playbooks/ip_ownership_playbook.md",
+    "playbooks/termination_renewal_playbook.md",
+    "samples/sample_saas_agreement_high_risk.md",
+    "samples/sample_mutual_nda_moderate_risk.md",
+    "samples/sample_professional_services_low_risk.md",
+    "policies/contract_review_policy_v1_legacy.md",
+    "evals/test_questions.md"
+  ],
+  "intentional_retrieval_traps": [
+    "Legacy policy conflicts with current policy on liability caps and auto-renewal.",
+    "SaaS agreement mentions AI model training and personal data, requiring privacy guidance retrieval.",
+    "IP ownership playbook and sample contracts use overlapping terms such as deliverables, tools, templates, improvements, and workflows.",
+    "Governing law preferences differ by jurisdiction and current policy allows only specific jurisdictions without escalation."
+  ]
+}

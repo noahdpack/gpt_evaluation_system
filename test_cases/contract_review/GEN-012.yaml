@@ -1,0 +1,74 @@
+id: "GEN-012"
+name: "Vague Scope of Services"
+category: "Commercial Terms"
+contract_type: "SOW"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Short excerpt"
+
+input_text: |
+  Vendor will provide consulting services to support Customer’s business objectives. Vendor will deliver work product as reasonably requested by Customer from time to time.
+
+expected:
+  finding: >
+    The scope of services and deliverables are vague.
+
+  explanation: >
+    Unclear scope can lead to disputes over what work is included, what deliverables
+    are owed, timelines, staffing, and whether additional fees apply.
+
+  severity: "High"
+
+  recommendation: >
+    Define specific services, deliverables, milestones, timelines, acceptance criteria,
+    assumptions, and out-of-scope work.
+
+assertions:
+  required_phrases:
+    - "support Customer’s business objectives"
+    - "reasonably requested"
+    - "from time to time"
+
+  required_concepts:
+    - "Vague scope of services"
+    - "Unclear deliverables"
+    - "Risk of disputes over included work"
+    - "Need for specific deliverables, timelines, or acceptance criteria"
+
+  prohibited_phrases:
+    - "scope is clear"
+    - "unlimited services"
+
+  prohibited_concepts:
+    - "Assuming the vendor must provide unlimited services"
+    - "Treating vague business-objective language as sufficiently specific"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not assume the vendor must provide unlimited services"
+  - "Do not treat “reasonably requested” as sufficiently clear"
+
+fail_conditions:
+  - "Says scope is adequate"
+  - "Fails to mention deliverables or timelines"
+  - "Provides no specific drafting recommendation"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

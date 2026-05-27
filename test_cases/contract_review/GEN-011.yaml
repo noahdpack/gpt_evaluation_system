@@ -1,0 +1,73 @@
+id: "GEN-011"
+name: "Unilateral Price Increases"
+category: "Commercial Terms"
+contract_type: "SaaS Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Full clause"
+
+input_text: |
+  Vendor may modify subscription fees at any time by posting updated pricing on its website. Continued use of the Services after such posting constitutes acceptance of the modified fees.
+
+expected:
+  finding: >
+    Vendor can unilaterally increase fees at any time through website posting.
+
+  explanation: >
+    This creates pricing uncertainty and may bind the customer to increased fees
+    without direct notice or affirmative agreement.
+
+  severity: "High"
+
+  recommendation: >
+    Limit price increases to renewal terms, require advance written notice, and cap
+    increases or require mutual agreement.
+
+assertions:
+  required_phrases:
+    - "modify subscription fees at any time"
+    - "posting updated pricing on its website"
+    - "Continued use"
+
+  required_concepts:
+    - "Unilateral price increase"
+    - "Website posting as notice mechanism"
+    - "Lack of direct notice or affirmative agreement"
+
+  prohibited_phrases:
+    - "customer approval is required"
+    - "no pricing risk"
+
+  prohibited_concepts:
+    - "Ignoring the “at any time” language"
+    - "Treating website posting as equivalent to negotiated written consent"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not say continued use always equals meaningful acceptance"
+  - "Do not ignore the “at any time” language"
+
+fail_conditions:
+  - "Misses price-change issue"
+  - "Does not identify website posting risk"
+  - "Gives no negotiation position"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

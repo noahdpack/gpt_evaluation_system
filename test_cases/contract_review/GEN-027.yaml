@@ -1,0 +1,74 @@
+id: "GEN-027"
+name: "Missing IP Infringement Indemnity"
+category: "Indemnity / Intellectual Property"
+contract_type: "SaaS Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Issue spotting / Risk assessment"
+input_type: "Short excerpt"
+
+input_text: |
+  Vendor grants Customer a subscription to access and use the Platform during the Subscription Term. Customer is responsible for all claims arising from its use of the Platform.
+
+expected:
+  finding: >
+    The agreement does not include a Vendor indemnity for third-party claims that the
+    platform infringes intellectual property rights.
+
+  explanation: >
+    If the SaaS platform infringes third-party IP, the customer could face claims
+    without contractual protection from the vendor.
+
+  severity: "High"
+
+  recommendation: >
+    Add a vendor IP infringement indemnity covering third-party claims arising from
+    the platform or services, subject to reasonable exclusions for customer modifications or misuse.
+
+assertions:
+  required_phrases:
+    - "Vendor grants Customer a subscription"
+    - "Platform"
+    - "Customer is responsible for all claims"
+
+  required_concepts:
+    - "Missing vendor IP infringement indemnity"
+    - "Customer exposure for claims involving vendor-provided platform"
+    - "Need vendor indemnity with reasonable exclusions"
+
+  prohibited_phrases:
+    - "IP indemnity is included"
+    - "Customer should bear all platform claims"
+
+  prohibited_concepts:
+    - "Assuming IP indemnity exists elsewhere"
+    - "Ignoring that the platform is vendor-provided"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not assume IP indemnity exists elsewhere"
+  - "Do not ignore that the platform is vendor-provided"
+
+fail_conditions:
+  - "Misses missing IP indemnity"
+  - "Says customer alone should bear all platform-use claims"
+  - "Provides no suggested indemnity concept"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

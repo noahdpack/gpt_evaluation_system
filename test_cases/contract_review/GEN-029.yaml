@@ -1,0 +1,73 @@
+id: "GEN-029"
+name: "Liability Cap Too Low"
+category: "Liability"
+contract_type: "SaaS Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Full clause"
+
+input_text: |
+  Vendor’s total aggregate liability under this Agreement shall not exceed the fees paid by Customer to Vendor in the three (3) months preceding the event giving rise to the claim.
+
+expected:
+  finding: >
+    The liability cap is low because it is limited to fees paid in the prior three months.
+
+  explanation: >
+    A low cap may not provide meaningful recovery for significant losses, especially
+    for data breach, service failure, confidentiality breach, or indemnity claims.
+
+  severity: "High"
+
+  recommendation: >
+    Increase the cap, such as to 12 months of fees or a fixed minimum amount, and
+    consider higher caps or exclusions for key risks.
+
+assertions:
+  required_phrases:
+    - "total aggregate liability"
+    - "fees paid"
+    - "three (3) months"
+
+  required_concepts:
+    - "Low liability cap"
+    - "Three-month fee lookback may be insufficient"
+    - "Need higher cap or carveouts for key risks"
+
+  prohibited_phrases:
+    - "all liability caps are unacceptable"
+    - "adequate cap"
+
+  prohibited_concepts:
+    - "Treating all liability caps as unacceptable"
+    - "Ignoring the short lookback period"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not say all liability caps are unacceptable"
+  - "Do not ignore the short lookback period"
+
+fail_conditions:
+  - "Misses low cap"
+  - "Does not assess adequacy from customer perspective"
+  - "Gives no negotiation position"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

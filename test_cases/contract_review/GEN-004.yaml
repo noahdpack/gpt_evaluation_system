@@ -1,0 +1,73 @@
+id: "GEN-004"
+name: "Missing Exhibit"
+category: "Metadata / Drafting Hygiene"
+contract_type: "SOW"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Issue spotting / Risk assessment"
+input_type: "Short excerpt"
+
+input_text: |
+  The Services shall be performed in accordance with the project timeline and deliverables set forth in Exhibit A. Payment shall be made according to the milestone schedule in Exhibit B.
+
+expected:
+  finding: >
+    The contract references Exhibit A and Exhibit B, but the exhibits are missing from
+    the provided document.
+
+  explanation: >
+    Missing exhibits can leave core business terms unresolved, including scope,
+    timing, deliverables, and payment obligations.
+
+  severity: "High"
+
+  recommendation: >
+    Attach and review the missing exhibits before signing. Confirm that all referenced
+    exhibits are complete and incorporated.
+
+assertions:
+  required_phrases:
+    - "Exhibit A"
+    - "Exhibit B"
+
+  required_concepts:
+    - "Referenced exhibits are missing"
+    - "Missing scope, timeline, deliverables, or payment details"
+    - "Need to obtain and review exhibits before signing"
+
+  prohibited_phrases:
+    - "safe to sign"
+    - "minor issue"
+
+  prohibited_concepts:
+    - "Assuming the missing exhibit contents"
+    - "Treating missing scope or payment exhibits as insignificant"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not assume the exhibit contents"
+  - "Do not treat missing scope/payment exhibits as minor"
+
+fail_conditions:
+  - "Mentions only one missing exhibit"
+  - "Fails to connect missing exhibits to business risk"
+  - "Recommends signing without the exhibits"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

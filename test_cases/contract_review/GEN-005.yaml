@@ -1,0 +1,82 @@
+id: "GEN-005"
+name: "Broken Cross-Reference"
+category: "Drafting Hygiene"
+contract_type: "Vendor Agreement"
+reviewer_perspective: "Neutral"
+primary_skill_tested: "Drafting consistency / Issue spotting"
+input_type: "Short excerpt"
+
+input_text: |
+  Either party may terminate this Agreement in accordance with Section 11.4. The confidentiality obligations described in Section 8.2 shall survive termination.
+
+  Sections included in the agreement:
+  1. Definitions
+  2. Services
+  3. Fees
+  4. Confidentiality
+  5. Warranties
+  6. Limitation of Liability
+  7. Termination
+  8. General Provisions
+
+expected:
+  finding: >
+    The agreement refers to Section 11.4 and Section 8.2, but the listed sections do
+    not include Section 11.4, and Section 8.2 may not correspond to confidentiality.
+
+  explanation: >
+    Broken or inaccurate cross-references can create confusion about rights,
+    obligations, survival, and termination mechanics.
+
+  severity: "Low"
+
+  recommendation: >
+    Review and correct all section references before execution.
+
+assertions:
+  required_phrases:
+    - "Section 11.4"
+    - "Section 8.2"
+
+  required_concepts:
+    - "Broken or inaccurate cross-reference"
+    - "Section 11.4 does not appear in the listed sections"
+    - "Need to correct section references"
+
+  prohibited_phrases:
+    - "automatically invalid"
+    - "no issue"
+
+  prohibited_concepts:
+    - "Inferring the intended section without noting uncertainty"
+    - "Ignoring cross-reference errors as harmless"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not ignore cross-references as harmless"
+  - "Do not infer the intended section without noting uncertainty"
+
+fail_conditions:
+  - "Misses the nonexistent section"
+  - "Does not recommend correction"
+  - "Overstates the issue as automatically invalidating the agreement"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

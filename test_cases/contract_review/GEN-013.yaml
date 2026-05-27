@@ -1,0 +1,73 @@
+id: "GEN-013"
+name: "Weak Confidentiality Duration"
+category: "Confidentiality"
+contract_type: "NDA"
+reviewer_perspective: "Disclosing Party"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Full clause"
+
+input_text: |
+  Recipient shall protect Discloser’s Confidential Information for a period of one (1) year from the date of disclosure. After such period, Recipient shall have no further confidentiality obligations.
+
+expected:
+  finding: >
+    The confidentiality period is short and contains no trade-secret carveout.
+
+  explanation: >
+    A one-year confidentiality period may be insufficient for sensitive business
+    information, and trade secrets should generally remain protected as long as they
+    qualify as trade secrets.
+
+  severity: "High"
+
+  recommendation: >
+    Extend the confidentiality period and add a trade-secret carveout that lasts as
+    long as the information remains a trade secret under applicable law.
+
+assertions:
+  required_phrases:
+    - "one (1) year"
+    - "no further confidentiality obligations"
+
+  required_concepts:
+    - "Short confidentiality duration"
+    - "No trade-secret carveout"
+    - "Disclosing-party risk"
+
+  prohibited_phrases:
+    - "one year is always invalid"
+    - "adequate protection"
+
+  prohibited_concepts:
+    - "Ignoring trade secrets"
+    - "Overstating that a one-year period is automatically unlawful or invalid"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not say one year is always invalid"
+  - "Do not ignore trade secrets"
+
+fail_conditions:
+  - "Misses the duration issue"
+  - "Fails to identify disclosing-party risk"
+  - "Does not recommend a carveout"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

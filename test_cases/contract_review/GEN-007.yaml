@@ -1,0 +1,71 @@
+id: "GEN-007"
+name: "No Termination for Convenience"
+category: "Commercial Terms"
+contract_type: "Vendor Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Full clause"
+
+input_text: |
+  Customer may terminate this Agreement only if Vendor materially breaches this Agreement and fails to cure such breach within thirty (30) days after receiving written notice.
+
+expected:
+  finding: >
+    The customer has no right to terminate for convenience.
+
+  explanation: >
+    Without a convenience termination right, the customer may be locked into the
+    agreement even if business needs change, budgets are reduced, or the vendor is no longer needed.
+
+  severity: "Medium"
+
+  recommendation: >
+    Add a termination-for-convenience right, ideally with reasonable advance notice.
+
+assertions:
+  required_phrases:
+    - "only if Vendor materially breaches"
+    - "fails to cure"
+
+  required_concepts:
+    - "No termination for convenience"
+    - "Customer is limited to termination for cause"
+    - "Customer lock-in or lack of flexibility"
+
+  prohibited_phrases:
+    - "Customer may terminate at any time"
+    - "termination for convenience is already included"
+
+  prohibited_concepts:
+    - "Confusing termination for cause with termination for convenience"
+    - "Assuming the customer has a free termination right"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not confuse termination for cause with termination for convenience"
+  - "Do not assume customer can terminate freely"
+
+fail_conditions:
+  - "Says customer can terminate without cause"
+  - "Misses the commercial flexibility issue"
+  - "Gives only generic termination commentary"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

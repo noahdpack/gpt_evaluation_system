@@ -1,0 +1,72 @@
+id: "GEN-022"
+name: "IP Ownership Ambiguity"
+category: "Intellectual Property"
+contract_type: "SOW"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Issue spotting / Risk assessment"
+input_type: "Short excerpt"
+
+input_text: |
+  Vendor will create reports, workflows, templates, and other deliverables for Customer. Each party retains ownership of its respective intellectual property.
+
+expected:
+  finding: >
+    The clause does not clearly state who owns the deliverables created by Vendor for Customer.
+
+  explanation: >
+    Without clear ownership or assignment language, disputes may arise over whether
+    the customer owns, can modify, or can reuse the deliverables.
+
+  severity: "High"
+
+  recommendation: >
+    Add language assigning ownership of customer-specific deliverables to Customer,
+    while allowing Vendor to retain pre-existing tools, templates, and background IP as appropriate.
+
+assertions:
+  required_phrases:
+    - "deliverables"
+    - "Each party retains ownership of its respective intellectual property"
+
+  required_concepts:
+    - "Ambiguity over ownership of deliverables"
+    - "Need to distinguish customer-specific deliverables from background IP"
+    - "Need clear assignment or license language"
+
+  prohibited_phrases:
+    - "Customer automatically owns"
+    - "ownership is clear"
+
+  prohibited_concepts:
+    - "Assuming customer owns deliverables automatically"
+    - "Ignoring vendor background IP"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not assume customer owns deliverables automatically"
+  - "Do not ignore vendor background IP"
+
+fail_conditions:
+  - "Misses ownership ambiguity"
+  - "Says “each party retains IP” resolves deliverable ownership"
+  - "Provides no assignment recommendation"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

@@ -1,0 +1,72 @@
+id: "GEN-009"
+name: "Short Cure Period"
+category: "Commercial Terms"
+contract_type: "MSA"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Full clause"
+
+input_text: |
+  Either party may terminate this Agreement if the other party breaches any provision of this Agreement and fails to cure such breach within three (3) business days after written notice.
+
+expected:
+  finding: >
+    The cure period is very short and applies to any breach.
+
+  explanation: >
+    A three-business-day cure period may be commercially impractical, especially for
+    complex operational, technical, payment, or compliance issues.
+
+  severity: "Medium"
+
+  recommendation: >
+    Revise to a more reasonable cure period, such as 30 days for most breaches,
+    with shorter periods reserved for nonpayment or urgent violations.
+
+assertions:
+  required_phrases:
+    - "any provision"
+    - "three (3) business days"
+
+  required_concepts:
+    - "Short cure period"
+    - "Applies broadly to any breach"
+    - "May be commercially impractical"
+
+  prohibited_phrases:
+    - "reasonable cure period"
+    - "standard and acceptable"
+
+  prohibited_concepts:
+    - "Assuming three business days is reasonable for all breaches"
+    - "Ignoring the broad application to any breach"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not assume three days is reasonable for all breaches"
+  - "Do not overlook that it applies broadly"
+
+fail_conditions:
+  - "Fails to flag the short cure period"
+  - "Does not suggest a revised period"
+  - "Ignores the “any breach” wording"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

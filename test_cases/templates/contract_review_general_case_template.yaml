@@ -1,0 +1,69 @@
+id: "GEN-___"
+name: "[Short descriptive name]"
+category: "[Metadata / Commercial Terms / Confidentiality / Privacy & Security / IP / Indemnity / Liability / Operational / Drafting Hygiene]"
+contract_type: "[NDA / MSA / SaaS Agreement / SOW / Vendor Agreement / Employment Agreement / Other]"
+reviewer_perspective: "[Customer-side / Vendor-side / Disclosing Party / Receiving Party / Buyer / Seller / Neutral]"
+primary_skill_tested: "[Issue spotting / Risk assessment / Clause extraction / Clause interaction / Redline suggestion / Drafting consistency]"
+input_type: "[Short excerpt / Full clause / Multi-clause excerpt / Full agreement]"
+
+input_text: |
+  [Paste contract excerpt here]
+
+expected:
+  finding: >
+    [What the GPT must identify]
+
+  explanation: >
+    [Why the issue matters legally, commercially, or operationally]
+
+  severity: "[Low / Medium / High / Critical]"
+
+  recommendation: >
+    [What the GPT should suggest, revise, negotiate, escalate, or clarify]
+
+assertions:
+  required_phrases:
+    - "[Exact contract language or phrase that should be cited]"
+
+  required_concepts:
+    - "[Concept that must be present, regardless of wording]"
+
+  prohibited_phrases:
+    - "[Exact phrase the model should not use]"
+
+  prohibited_concepts:
+    - "[Bad or misleading idea the model should avoid]"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "[Example: Do not say the contract is automatically unenforceable]"
+  - "[Example: Do not recommend an aggressive position when the issue is minor]"
+  - "[Example: Do not flag risks that only affect the counterparty]"
+
+fail_conditions:
+  - "Misses the primary issue"
+  - "Misidentifies which party bears the risk"
+  - "Gives only generic advice"
+  - "Invents facts not present in the excerpt"
+  - "Provides a recommendation that does not address the issue"
+  - "Ignores the reviewer perspective"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

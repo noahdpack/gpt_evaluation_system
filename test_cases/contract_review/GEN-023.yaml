@@ -1,0 +1,74 @@
+id: "GEN-023"
+name: "No Assignment of Deliverables"
+category: "Intellectual Property"
+contract_type: "Consulting Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Issue spotting / Risk assessment"
+input_type: "Full clause"
+
+input_text: |
+  Vendor shall provide custom software configuration, documentation, and training materials for Customer. Customer may use the deliverables internally during the term of this Agreement.
+
+expected:
+  finding: >
+    The clause gives Customer only internal use rights during the term and does not
+    assign ownership of custom deliverables.
+
+  explanation: >
+    The customer may lose rights to use, modify, or retain deliverables after
+    termination despite paying for custom work.
+
+  severity: "High"
+
+  recommendation: >
+    Assign ownership of custom deliverables to Customer or grant a perpetual,
+    irrevocable, worldwide license sufficient for Customer’s business needs.
+
+assertions:
+  required_phrases:
+    - "custom software configuration"
+    - "Customer may use the deliverables internally"
+    - "during the term"
+
+  required_concepts:
+    - "No assignment of custom deliverables"
+    - "Limited internal-use right"
+    - "Post-termination use risk"
+
+  prohibited_phrases:
+    - "payment equals ownership"
+    - "Customer owns the deliverables"
+
+  prohibited_concepts:
+    - "Assuming payment creates ownership"
+    - "Ignoring that use rights are limited to the term"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not assume payment equals ownership"
+  - "Do not ignore “during the term”"
+
+fail_conditions:
+  - "Misses limited license"
+  - "Fails to flag no assignment"
+  - "Gives no IP rights recommendation"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

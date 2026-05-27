@@ -1,0 +1,72 @@
+id: "GEN-008"
+name: "One-Sided Termination Right"
+category: "Commercial Terms"
+contract_type: "MSA"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Clause interaction / Risk assessment"
+input_type: "Full clause"
+
+input_text: |
+  Vendor may terminate this Agreement or any Order Form at any time upon thirty (30) days’ written notice to Customer. Customer may terminate only if Vendor materially breaches this Agreement and fails to cure within thirty (30) days.
+
+expected:
+  finding: >
+    The termination rights are one-sided because Vendor can terminate for convenience,
+    but Customer can terminate only for uncured material breach.
+
+  explanation: >
+    This creates an imbalance and may leave the customer without equivalent flexibility.
+
+  severity: "Medium"
+
+  recommendation: >
+    Make termination rights mutual or add a customer termination-for-convenience right.
+
+assertions:
+  required_phrases:
+    - "Vendor may terminate"
+    - "at any time"
+    - "Customer may terminate only"
+
+  required_concepts:
+    - "One-sided termination rights"
+    - "Vendor has broader termination rights than Customer"
+    - "Need for mutuality or customer termination-for-convenience right"
+
+  prohibited_phrases:
+    - "mutual termination rights"
+    - "equivalent rights"
+
+  prohibited_concepts:
+    - "Treating the termination rights as balanced"
+    - "Ignoring different termination triggers"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not evaluate the clause as mutual"
+  - "Do not ignore the different termination triggers"
+
+fail_conditions:
+  - "Misses the asymmetry"
+  - "Says both parties have equivalent rights"
+  - "Does not recommend a fix"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

@@ -1,0 +1,6 @@
+streamlit
+PyYAML
+openai
+rapidfuzz
+pydantic
+python-dotenv

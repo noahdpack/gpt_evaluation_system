@@ -1,0 +1,75 @@
+id: "GEN-028"
+name: "Overbroad Customer Indemnity"
+category: "Indemnity"
+contract_type: "SaaS Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Risk assessment / Issue spotting"
+input_type: "Full clause"
+
+input_text: |
+  Customer shall indemnify Vendor from and against all claims, damages, liabilities, and expenses arising out of or related to the Services, Customer Data, Customer’s use of the Services, or any dispute involving Customer or its users.
+
+expected:
+  finding: >
+    The customer indemnity is overbroad and could require Customer to indemnify
+    Vendor for claims not caused by Customer’s breach, misconduct, data, or misuse.
+
+  explanation: >
+    The clause shifts broad service-related and user-related risks to the customer,
+    potentially including risks caused by Vendor.
+
+  severity: "High"
+
+  recommendation: >
+    Limit Customer’s indemnity to third-party claims arising from Customer’s breach,
+    unlawful use, Customer Data infringement, or misuse of the services, excluding
+    claims caused by Vendor.
+
+assertions:
+  required_phrases:
+    - "all claims"
+    - "arising out of or related to the Services"
+    - "any dispute involving Customer or its users"
+
+  required_concepts:
+    - "Overbroad customer indemnity"
+    - "Indemnity may cover claims not caused by Customer"
+    - "Need to narrow to Customer breach, misuse, unlawful use, or Customer Data issues"
+
+  prohibited_phrases:
+    - "all service-related claims are Customer’s responsibility"
+    - "standard without issue"
+
+  prohibited_concepts:
+    - "Ignoring vendor fault"
+    - "Treating all service-related claims as customer responsibility"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not treat all service-related claims as customer responsibility"
+  - "Do not ignore vendor fault"
+
+fail_conditions:
+  - "Misses overbreadth"
+  - "Provides no narrowing recommendation"
+  - "Misidentifies vendor as the party at risk only"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""

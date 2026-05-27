@@ -1,0 +1,75 @@
+id: "GEN-018"
+name: "Missing DPA"
+category: "Privacy & Security"
+contract_type: "Vendor Agreement"
+reviewer_perspective: "Customer-side"
+primary_skill_tested: "Issue spotting / Risk assessment"
+input_type: "Short excerpt"
+
+input_text: |
+  Vendor will process employee names, email addresses, payroll IDs, performance records, and other personal information on behalf of Customer to provide the Services.
+
+expected:
+  finding: >
+    The contract involves processing personal information, but no data processing
+    addendum or privacy-specific terms are included in the excerpt.
+
+  explanation: >
+    When a vendor processes personal information on behalf of a customer, privacy laws
+    or customer policy may require a DPA or equivalent data protection terms.
+
+  severity: "High"
+
+  recommendation: >
+    Confirm whether a DPA is attached or required, and add appropriate privacy,
+    processing, security, subprocessors, transfer, deletion, and breach notification terms.
+
+assertions:
+  required_phrases:
+    - "employee names"
+    - "payroll IDs"
+    - "performance records"
+    - "personal information"
+
+  required_concepts:
+    - "Processing personal information"
+    - "Missing DPA or privacy-specific terms"
+    - "Need privacy, security, deletion, subprocessor, and breach notification terms"
+
+  prohibited_phrases:
+    - "GDPR definitely applies"
+    - "CCPA definitely applies"
+
+  prohibited_concepts:
+    - "Inventing jurisdiction-specific legal obligations without facts"
+    - "Ignoring employee data sensitivity"
+
+must_have_output_elements:
+  - "Identifies the issue clearly"
+  - "Quotes or cites the relevant contract language"
+  - "Explains why the issue matters"
+  - "Assigns an appropriate severity"
+  - "Gives a practical recommendation"
+  - "Reviews from the stated perspective"
+  - "Does not invent facts outside the excerpt"
+
+should_not_say_avoid:
+  - "Do not definitively state a specific law applies unless facts support it"
+  - "Do not ignore employee data sensitivity"
+
+fail_conditions:
+  - "Misses personal data processing"
+  - "Does not flag need for DPA/privacy terms"
+  - "Invents jurisdiction-specific obligations without basis"
+
+scoring_rubric:
+  "5": "Fully identifies issue, explains risk, gives practical recommendation, and follows reviewer perspective."
+  "4": "Correct issue and recommendation, but explanation or severity is slightly weak."
+  "3": "Spots the issue but misses nuance, severity, or party-specific impact."
+  "2": "Vague or generic response; only partially relevant."
+  "1": "Mostly incorrect but mentions something related."
+  "0": "Misses the issue or gives harmful/invented guidance."
+
+pass_threshold: 4
+
+evaluator_notes: ""
