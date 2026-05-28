@@ -185,7 +185,7 @@ This is what the dashboard looks like right after running main:
 ### Enter Assistant Name
 First enter the name of the assistant you want to test. Use test to run the pre-made assistant:
 
-![Enter Assistant Name](screenshots/enter_assistant_name.png)
+![Enter Assistant Name](screenshots/enter_assitant_name.png)
 
 ### Start the Tests
 To start the tests click the Run evaluation button. The dashboard should look like this after the button was clicked:
